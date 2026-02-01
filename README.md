@@ -31,7 +31,7 @@ This project is a React Native application that includes:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/mohitbhandari6112/todoAuth
 cd your-repo-name
 ```
 
