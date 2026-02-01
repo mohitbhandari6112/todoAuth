@@ -53,6 +53,12 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: "center" },
-  button: { marginTop: 15 },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+  },
+  button: {
+    marginTop: 15,
+  },
 });

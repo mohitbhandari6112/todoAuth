@@ -104,8 +104,19 @@ export default function UpdateProfile() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, justifyContent: "center" },
-  input: { marginVertical: 8 },
-  button: { marginTop: 16 },
-  error: { color: "red", marginBottom: 10 },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+  },
+  input: {
+    marginVertical: 8,
+  },
+  button: {
+    marginTop: 16,
+  },
+  error: {
+    color: "red",
+    marginBottom: 10,
+  },
 });

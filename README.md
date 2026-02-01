@@ -1,50 +1,129 @@
-# Welcome to your Expo app 👋
+# React Native Todo App with Mock Authentication API
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+---
 
-## Get started
+## Project Overview
 
-1. Install dependencies
+This project is a React Native application that includes:
 
-   ```bash
-   npm install
-   ```
+- User Registration (Sign Up)
+- User Login (Sign In)
+- Todo CRUD functionality (Create, Read, Update, Delete)
+- Local state management for Todos
+- Local session persistence using AsyncStorage
+- Mock backend API using MockAPI.io (Authentication only)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Technologies Used
 
-In the output, you'll find options to open the app in a
+- React Native (Expo)
+- TypeScript
+- React Native Paper
+- Redux Toolkit / RTK Query
+- @react-native-async-storage/async-storage
+- MockAPI.io
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Setup Instructions
 
-## Get a fresh project
-
-When you're ready, run:
+### Clone Repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Install Dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### Run Application
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## API Configuration (Authentication Only)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Base URL
+
+```
+https://697f20ead1548030ab653955.mockapi.io
+```
+
+---
+
+## User Model
+
+Only user records are stored in MockAPI.  
+All authentication logic is handled on the frontend after fetching users.
+
+```json
+{
+  "id": "1",
+  "name": "John Doe",
+  "email": "johndoe@test.com",
+  "password": "123456"
+}
+```
+
+---
+
+## Authentication Endpoints
+
+### Get All Users
+
+```http
+GET /users
+```
+
+All users are fetched first, and email/password validation is handled on the frontend.
+
+---
+
+### Register User
+
+```http
+POST /users
+```
+
+Request Body:
+
+```json
+{
+  "name": "John Doe",
+  "email": "johndoe@test.com",
+  "password": "123456"
+}
+```
+
+---
+
+## Todo Implementation
+
+- Todos are managed using React local state (`useState`)
+- Todo data is persisted locally using AsyncStorage
+- No backend API is used for Todo CRUD operations
+
+---
+
+## Assumptions
+
+- Password validation is handled on the frontend.
+- No JWT or token-based authentication is implemented.
+- No password hashing is used (passwords are stored in plain text).
+- User API responses include the password field.
+- Todos are managed locally using React state.
+- Project is intended for development and demonstration purposes only.
+
+---
+
+## Author
+
+Mohit Bhandari
