@@ -1,15 +1,13 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
+import { useSelector } from "react-redux";
+import { RootState } from "./src/store/store";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+  const token = useSelector((state: RootState) => state.auth.token);
+
+  if (token) {
+    return <Redirect href="/home" />;
+  }
+
+  return <Redirect href="/login" />;
 }
